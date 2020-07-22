@@ -9,10 +9,6 @@ public class SearchMap extends SearchMapFunc {
 
 
     public void acessarMap (){
-
         entrarEsporte(testeMap);
-        try { Thread.sleep(10000); } catch (InterruptedException ex) {
-            System.out.println ("Puxa, estava dormindo! Você me acordou");
-        }
     }
 }

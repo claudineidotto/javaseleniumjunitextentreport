@@ -2,6 +2,7 @@ package com.javaseleniumjunit.bases;
 
 import com.javaseleniumjunit.Parametros;
 import com.javaseleniumjunit.utils.DriverFactory;
+import com.javaseleniumjunit.utils.ExtentReportUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -102,7 +103,7 @@ public class PageBase  {
 
     protected void sendKeys(By locator, String text){
         waitForElement(locator).sendKeys(text);
-       // ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
+        ExtentReportUtils.addTestInfo( "Preencheu texto: " + text);
     }
 
 
