@@ -7,30 +7,27 @@ public class BDUtils {
 
    public static String status = "Não conectou...";
 
-   public static java.sql.Connection getConexaoMySQL(){
-     Connection connection = null;          //atributo do tipo Connection
-     try {
-         String driverName = "com.mysql.jdbc.Driver";
-         Class.forName(driverName);
+   public static java.sql.Connection getConexaoMySQL() {
+       Connection connection = null;          //atributo do tipo Connection
+       try {
 
-          String serverName = "127.0.0.1";    //caminho do servidor do BD
-          String mydatabase = "mantis_db_1";        //nome do seu banco de dados
-          String url = "jdbc:mysql://" + serverName + "\\" + mydatabase;
-          String username = "root";        //nome de um usuário de seu BD
-          String password = "root";      //sua senha de acesso
-          connection = DriverManager.getConnection(url, username, password);
-         return connection;
+           Class.forName("com.mysql.jdbc.Driver");
+           String url = "jdbc:mysql://localhost:3306/bugtracker";
+           String username = "root";        //nome de um usuário de seu BD
+           String password = "root";      //sua senha de acesso
+           connection = DriverManager.getConnection(url, username, password);
+           return connection;
 
-        //Testa sua conexão//
+           //Testa sua conexão//
 
-          } catch (ClassNotFoundException e) {  //Driver não encontrado
+       } catch (ClassNotFoundException e) {  //Driver não encontrado
            System.out.println("O driver expecificado nao foi encontrado.");
-            return null;
-          } catch (SQLException e) {
-          System.out.println("Nao foi possivel conectar ao Banco de Dados.");
-       return null;
-          }
-      }
+           return null;
+       } catch (SQLException e) {
+           System.out.println("Nao foi possivel conectar ao Banco de Dados.");
+           return null;
+       }
+   }
 
     public void DBRunQuery(String query)
     {   Connection cmd = null;          //atributo do tipo Connection

@@ -21,9 +21,9 @@ public class TestBase {
 
     @BeforeClass
     public static void init(){
-   // BDUtils bdUtils = new BDUtils();
+    BDUtils bdUtils = new BDUtils();
     ExtentReportUtils.createReport();
-    //bdUtils.criarProjetoCarga();
+    bdUtils.criarProjetoCarga();
     }
 
     @Before
